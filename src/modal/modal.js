@@ -188,7 +188,9 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
 
       function removeAfterAnimate(domEl, scope, emulateTime, done) {
         // Closing animation
-        scope.animate = false;
+        $timeout(function() {
+          scope.animate = false;
+        });
 
         var transitionEndEventName = $transition.transitionEndEventName;
         if (transitionEndEventName) {
